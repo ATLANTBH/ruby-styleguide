@@ -15,10 +15,10 @@ an employee).
 
 ## Coding Style
 
- * Use soft-tabs with a two space indent
- * Keep lines fewer than 80 characters
- * Never leave trailing whitespace
- * Use spaces around operators, after commas, colons and semicolons, around `{`
+* Use soft-tabs with a two space indent
+* Keep lines fewer than 80 characters
+* Never leave trailing whitespace
+* Use spaces around operators, after commas, colons and semicolons, around `{`
    and before `}`
 
     ```Ruby
@@ -27,13 +27,13 @@ an employee).
     1 > 2 ? true : false; puts 'Hi'
     [1, 2, 3].each { |e| puts e }
 
- * No spaces after `(`, `[` or before `]`, `)`
+* No spaces after `(`, `[` or before `]`, `)`
 
     ```Ruby
      some(arg).other
      [1, 2, 3].length
     
- * Indent `when` as deep as `case`
+* Indent `when` as deep as `case`
 
      ```Ruby
      case
@@ -57,7 +57,7 @@ an employee).
             end
 
 
- * Use empty lines between defs and to break up a method into logical
+* Use empty lines between defs and to break up a method into logical
    paragraphs
 
     ```Ruby
@@ -98,7 +98,7 @@ end
 # Syntax
 
 
- * Use `def` with parentheses when there are arguments. Omit the parentheses
+* Use `def` with parentheses when there are arguments. Omit the parentheses
    when the method doesn't accept any arguments
 
     ```Ruby
@@ -110,7 +110,7 @@ end
       # body omitted
     end
 
- * Never use `for`, unless you know exactly why. Most of the time iterators
+* Never use `for`, unless you know exactly why. Most of the time iterators
    should be used instead. `for` is implemented in terms of `each` (so you're
    adding a level of indirection), but with a twist - `for` doesn't introduce a
    new scope (unlike `each`) and variables defined in its block will be visible
@@ -127,7 +127,7 @@ end
     # good
     arr.each { |elem| puts elem }
 
- * Never use `then` for multi-line `if/unless`
+* Never use `then` for multi-line `if/unless`
 
     ```Ruby
     # bad
@@ -140,7 +140,7 @@ end
         # body omitted
     end
 
- * Avoid the ternary operator except in cases where all expressions are
+* Avoid the ternary operator except in cases where all expressions are
    extremely trivial. However, do use the ternary operator over
    `if/then/else/end` constructs for single line conditionals
 
@@ -151,7 +151,7 @@ end
     # good
     result = some_condition ? something : something_else
 
- * Use one expression per branch in a ternary operator. This also means that
+* Use one expression per branch in a ternary operator. This also means that
    ternary operators must not be nested. Prefer `if/else` constructs in these
    cases
 
@@ -166,12 +166,12 @@ end
       something_else
     end
 
- * The `and` and `or` keywords are banned. It's just not worth it. Always use
+* The `and` and `or` keywords are banned. It's just not worth it. Always use
    `&&` and `||` instead
 
- * Avoid multi-line ternary operator, use `if/unless` instead
+* Avoid multi-line ternary operator, use `if/unless` instead
 
- * Favor modifier `if/unless` usage when you have a single-line body
+* Favor modifier `if/unless` usage when you have a single-line body
 
     ```Ruby
     # bad
@@ -182,7 +182,7 @@ end
     # good
     do_something if some_condition
 
- * Never use `unless` with `else`. Rewrite these with the positive case first
+* Never use `unless` with `else`. Rewrite these with the positive case first
 
     ```Ruby
     # bad
@@ -199,7 +199,7 @@ end
       puts 'failure'
     end
 
- * Don't use parentheses around the condition of an `if/unless/while`
+* Don't use parentheses around the condition of an `if/unless/while`
 
     ```Ruby
     # bad
@@ -212,7 +212,7 @@ end
       # body omitted
     end
 
- * Prefer `{...}` over `do...end` for single-line blocks. Avoid using `{...}`
+* Prefer `{...}` over `do...end` for single-line blocks. Avoid using `{...}`
    for multi-line blocks (multiline chaining is always ugly). Always use
    `do...end` for "control flow" and "method definitions" (e.g. in Rakefiles
    and certain DSLs).  Avoid `do...end` when chaining
@@ -240,7 +240,7 @@ Some will argue that multiline chaining would look OK with the use of `{...}`,
 but they should ask themselves - is this code really readable and can't the 
 block's contents be extracted into nifty methods?
 
- * Avoid `return` where not required
+* Avoid `return` where not required
 
     ```Ruby
     # bad
@@ -253,7 +253,7 @@ block's contents be extracted into nifty methods?
         some_arr.size
     end
 
- * Use spaces around the `=` operator when assigning default values to method
+* Use spaces around the `=` operator when assigning default values to method
    parameters:
 
     ```Ruby
@@ -270,7 +270,7 @@ block's contents be extracted into nifty methods?
 While several Ruby books suggest the first style, the second is much more 
 prominent in practice (and arguably a bit more readable).
 
- * Using the return value of `=` (an assignment) is ok assignment with
+* Using the return value of `=` (an assignment) is ok assignment with
    parenthesis
 
     ```Ruby
@@ -283,13 +283,13 @@ prominent in practice (and arguably a bit more readable).
     # also good - has correct precedence.
     if (v = next_value) == "hello" ...
 
- * Use `||=` freely to initialize variables
+* Use `||=` freely to initialize variables
 
     ```Ruby
     # set name to Bozhidar, only if it's nil or false
     name ||= 'Bozhidar'
 
- * Don't use `||=` to initialize boolean variables (consider what would happen
+* Don't use `||=` to initialize boolean variables (consider what would happen
    if the current value happened to be false)
 
     ```Ruby
@@ -299,11 +299,11 @@ prominent in practice (and arguably a bit more readable).
     # good
     enabled = true if enabled.nil?
 
- * Avoid using Perl-style special variables (like `$0-9`, `$`, etc. ). They are
+* Avoid using Perl-style special variables (like `$0-9`, `$`, etc. ). They are
    quite cryptic and their use in anything but one-liner scripts is
    discouraged. Prefer long form versions such as `$PROGRAM_NAME`
 
- * Never put a space between a method name and the opening parenthesis
+* Never put a space between a method name and the opening parenthesis
 
     ```Ruby
     # bad 
@@ -312,11 +312,11 @@ prominent in practice (and arguably a bit more readable).
     # good 
     f(3 + 2) + 1
 
- * If the first argument to a method begins with an open parenthesis, always
+* If the first argument to a method begins with an open parenthesis, always
    use parentheses in the method invocation. For example, write `f((3 + 2) +
    1)`
 
- * Use `_` for unused block parameters
+* Use `_` for unused block parameters
 
     ```Ruby
     # bad
@@ -327,20 +327,20 @@ prominent in practice (and arguably a bit more readable).
 
 ## Naming
 
- * Use snake\_case for methods and variables
- * Use CamelCase for classes and modules (keep acronyms like HTTP, RFC, XML
+* Use snake\_case for methods and variables
+* Use CamelCase for classes and modules (keep acronyms like HTTP, RFC, XML
    uppercase)
- * Use SCREAMING\_SNAKE\_CASE for other constants
- * The names of predicate methods (methods that return a boolean value) should
+* Use SCREAMING\_SNAKE\_CASE for other constants
+* The names of predicate methods (methods that return a boolean value) should
    end in a question mark. (i.e. `Array#empty?`)
- * The names of potentially "dangerous" methods (i.e. methods that modify
+* The names of potentially "dangerous" methods (i.e. methods that modify
    `self` or the arguments, `exit!`, etc.) should end with an exclamation mark
    Bang methods should only exist if a non-bang method exists  ([more on
    this](http://dablog.rubypal.com/2007/8/15/bang-methods-or-danger-will-rubyist))
 
 ## Classes
 
- * Avoid the usage of class (`@@`) variables due to their "nasty" behavior in
+* Avoid the usage of class (`@@`) variables due to their "nasty" behavior in
    inheritance
 
     ```Ruby
@@ -362,7 +362,7 @@ As you can see all the classes in a class hierarchy actually share one class
 variable. Class instance variables should usually be preferred over class
 variables.
 
- * Use `def self.method` to define singleton methods. This makes the methods
+* Use `def self.method` to define singleton methods. This makes the methods
    more resistant to refactoring changes
 
     ```Ruby
@@ -377,7 +377,7 @@ variables.
         # body omitted
       end
 
- * Avoid `class << self` except when necessary, e.g. single accessors and
+* Avoid `class << self` except when necessary, e.g. single accessors and
    aliased attributes
 
     ```Ruby
@@ -408,7 +408,7 @@ variables.
       end
     end
 
- * Indent the `public`, `protected`, and `private` methods as much the method
+* Indent the `public`, `protected`, and `private` methods as much the method
    definitions they apply to. Leave one blank line above them
 
     ```Ruby
@@ -423,7 +423,7 @@ variables.
       end
     end
 
- * Avoid explicit use of `self` as the recipient of internal class or instance
+* Avoid explicit use of `self` as the recipient of internal class or instance
    messages unless to specify a method shadowed by a variable
 
     ```Ruby
@@ -438,7 +438,7 @@ variables.
 
 ## Exceptions
 
- * Don't use exceptions for flow of control
+* Don't use exceptions for flow of control
 
     ```Ruby
     # bad
@@ -455,7 +455,7 @@ variables.
       n / d
     end
 
- * Avoid rescuing the `Exception` class
+* Avoid rescuing the `Exception` class
 
     ```Ruby
     # bad
@@ -474,7 +474,7 @@ variables.
 
 ## Collections
 
- * Prefer `%w` to the literal array syntax when you need an array of strings
+* Prefer `%w` to the literal array syntax when you need an array of strings
 
     ```Ruby
     # bad
@@ -483,12 +483,12 @@ variables.
     # good
     STATES = %w(draft open closed)
 
- * Use `Set` instead of `Array` when dealing with unique elements. `Set`
+* Use `Set` instead of `Array` when dealing with unique elements. `Set`
    implements a collection of unordered values with no duplicates. This is a
    hybrid of `Array`'s intuitive inter-operation facilities and `Hash`'s fast
    lookup
 
- * Use symbols instead of strings as hash keys
+* Use symbols instead of strings as hash keys
 
     ```Ruby
     # bad
@@ -499,7 +499,7 @@ variables.
 
 ## Strings
 
- * Prefer string interpolation instead of string concatenation:
+* Prefer string interpolation instead of string concatenation:
 
     ```Ruby
     # bad
@@ -508,7 +508,7 @@ variables.
     # good
     email_with_name = "#{user.name} <#{user.email}>"
 
- * Prefer double-quoted strings. Interpolation and escaped characters will
+* Prefer double-quoted strings. Interpolation and escaped characters will
    always work without a delimiter change, and `'` is a lot more common than
    `"` in string literals
 
@@ -519,7 +519,7 @@ variables.
     # good
     name = "Bozhidar"
 
- * Avoid using `String#+` when you need to construct large data chunks.
+* Avoid using `String#+` when you need to construct large data chunks.
    Instead, use `String#<<`. Concatenation mutates the string instance in-place
    and is always faster than `String#+`, which creates a bunch of new string
    objects
@@ -535,7 +535,7 @@ variables.
 
 ## Regular Expressions
 
- * Avoid using `$1-9` as it can be hard to track what they contain. Named groups
+* Avoid using `$1-9` as it can be hard to track what they contain. Named groups
    can be used instead
 
     ```Ruby
@@ -549,7 +549,7 @@ variables.
     ...
     process meaningful_var
 
- * Be careful with `^` and `$` as they match start/end of line, not string
+* Be careful with `^` and `$` as they match start/end of line, not string
    endings. If you want to match the whole string use: `\A` and `\Z`
 
     ```Ruby
@@ -557,7 +557,7 @@ variables.
     string[/^username$/]   # matches
     string[/\Ausername\Z/] # don't match
 
- * Use `x` modifier for complex regexps. This makes them more readable and you
+* Use `x` modifier for complex regexps. This makes them more readable and you
    can add some useful comments. Just be careful as spaces are ignored
 
     ```Ruby
@@ -571,12 +571,12 @@ variables.
 
 ## Percent Literals
 
- * Use `%w` freely
+* Use `%w` freely
 
     ```Ruby
     STATES = %w(draft open closed)
 
- * Use `%()` for single-line strings which require both interpolation and
+* Use `%()` for single-line strings which require both interpolation and
    embedded double-quotes. For multi-line strings, prefer heredocs
 
     ```Ruby
@@ -596,7 +596,7 @@ variables.
     %(<tr><td class="name">#{name}</td>)
 
 
- * Use `%r` only for regular expressions matching more than one '/' character
+* Use `%r` only for regular expressions matching more than one '/' character
 
     ```Ruby
     # bad
