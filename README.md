@@ -104,7 +104,7 @@ end
     ```Ruby
     def some_method
       # body omitted
-     end
+    end
 
     def some_method_with_arguments(arg1, arg2)
       # body omitted
