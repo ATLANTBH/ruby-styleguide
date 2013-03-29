@@ -13,6 +13,10 @@ Please add to this guide if you find any particular patterns or styles that
 we've adopted internally. Submit a pull request to ask for feedback (if you're
 an employee).
 
+Here's how our guide currently differs from Github's style guide:
+
+* Recommend usage of single-quotes over double-quotes for string literals
+
 ## Coding Style
 
 * Use soft-tabs with a two space indent
@@ -508,16 +512,20 @@ variables.
     # good
     email_with_name = "#{user.name} <#{user.email}>"
 
-* Prefer double-quoted strings. Interpolation and escaped characters will
-   always work without a delimiter change, and `'` is a lot more common than
-   `"` in string literals
+* Prefer single-quoted strings for literals. If there is no need for
+  interpolation do not use double-quotes. Single-quoted strings are not so
+  often used as e.g.  `/` which would need to be escaped in double-quoted
+  strings.
 
     ```Ruby
     # bad
-    name = 'Bozhidar'
+    name = "Bozhidar"
 
     # good
-    name = "Bozhidar"
+    name = 'Bozhidar'
+
+    # also good
+    message = "Hello #{name}"
 
 * Avoid using `String#+` when you need to construct large data chunks.
    Instead, use `String#<<`. Concatenation mutates the string instance in-place
